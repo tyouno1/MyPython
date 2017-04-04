@@ -12,6 +12,7 @@ class Tail():
       # 打开文件
       with open(self.file_name) as f:
         self._file = f
+        # 到文件的最后
         self._file.seek(0,2)
         # 存储文件的字符长度
         self.file_length = self._file.tell()
