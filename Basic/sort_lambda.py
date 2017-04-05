@@ -1,3 +1,4 @@
+#encoding:utf-8
 # 这个示例可以知道
 # 1. 函数可以作为参数进行传递
 #    通过这种方法可以将函数做更进一步的抽象
@@ -49,7 +50,7 @@ def sort_list_comm(work , key, cmp):
 
 
 work = [{"name":'kk'},{'name':'wn'},{'name':'wd'}]
-sort_list_comm(work, lambda x: x['name'], cmp)
+sort_list_comm(work, key=lambda x: x['name'], cmp=cmp)
 print work
 
 # OUTPUT:
