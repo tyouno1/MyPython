@@ -34,3 +34,23 @@ print work
 #  OUTPUT:
 #  [(2, 3), (1, 4), (5, 1)]
 
+# 更近一步，将比较的方法抽象出来，自定义
+def cmp(x,y):
+  if x > y:
+    return True
+  else:
+    return False
+
+def sort_list_comm(work , key, cmp):
+  for j in range(len(work)-1):
+      for i in range(len(work)-1):
+         if cmp(key(work[i]),key(work[i+1])):
+            work[i],work[i+1] = work[i+1],work[i]
+
+
+work = [{"name":'kk'},{'name':'wn'},{'name':'wd'}]
+sort_list_comm(work, lambda x: x['name'], cmp)
+print work
+
+# OUTPUT:
+# [{'name': 'kk'}, {'name': 'wd'}, {'name': 'wn'}]
